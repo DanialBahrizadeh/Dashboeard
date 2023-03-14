@@ -44,9 +44,8 @@ const Item: FC<ItemProps> = ({ item, period }) => {
   };
   const key = item.title.toLocaleLowerCase().replace(/\s/g, "-") as Key;
   const info = obj[key];
-  console.log(info);
   return (
-    <div className="bg-neutral-blue-dark rounded-b-2xl flex flex-col justify-center px-5 relative rounded-t-2xl">
+    <div className="bg-neutral-blue-dark rounded-b-2xl flex flex-col justify-center px-5 relative rounded-t-2xl  lg:justify-start lg:gap-8 lg:pt-5 lg:aspect-[12/1] lg:self-end">
       <div
         className={`absolute w-full h-full -top-12 left-0 rounded-t-2xl ${info.color} flex justify-end pr-5 -z-10`}
       >
@@ -60,11 +59,11 @@ const Item: FC<ItemProps> = ({ item, period }) => {
           <Ellipsis />
         </span>
       </div>
-      <div className="flex justify-between">
-        <span className="text-white text-3xl font-light">
+      <div className="flex justify-between lg:flex-col">
+        <span className="text-white text-3xl font-light lg:text-6xl lg:pb-5">
           {item.timeframes[period].current}hrs
         </span>
-        <span className="text-base grid place-content-center">{`Last ${
+        <span className="text-base grid place-content-center lg:justify-start lg:pb-5">{`Last ${
           period === "daily" ? "day" : period.slice(0, -2)
         } - ${item.timeframes[period].previous}hrs`}</span>
       </div>

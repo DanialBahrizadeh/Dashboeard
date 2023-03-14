@@ -28,7 +28,6 @@ const App: React.FC = () => {
       setData(null);
     };
   }, []);
-  console.log(data);
   function handleChange(time: PeriodTimes) {
     if (period[time]) return;
     setPeriod((prevState) => ({
@@ -40,7 +39,7 @@ const App: React.FC = () => {
     setPeriodString(time);
   }
   return (
-    <div>
+    <div className="lg:grid lg:place-content-center lg:h-screen">
       <Helmet>
         <meta name="description" content="dashboard" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -52,24 +51,24 @@ const App: React.FC = () => {
           rel="stylesheet"
         ></link>
         <title>Dashboeard</title>
-        <body className="text-lg bg-neutral-blue-very-dark min-h-screen font-rubik" />
+        <body className="text-lg bg-neutral-blue-very-dark min-h-screen font-rubik lg:max-h-screen" />
       </Helmet>
-      <div className="min-h-[150vh] grid grid-cols-1 grid-flow-row pt-8 px-4 text-neutral-blue-pale gap-16">
-        <div className="row-span-2 grid grid-rows-3 grid-cols-1">
-          <div className="row-span-2 bg-primary flex justify-left pl-8 items-center gap-4 rounded-2xl relative z-50">
+      <div className="min-h-[150vh] grid grid-cols-1 grid-flow-row pt-8 px-4 text-neutral-blue-pale gap-16 lg:min-h-[67vh]  lg:grid-rows-2 lg:grid-flow-col">
+        <div className="row-span-2 grid grid-rows-3 grid-cols-1 lg:min-w-[19rem]">
+          <div className="row-span-2 bg-primary flex pl-8 items-center gap-4 rounded-2xl relative z-50 lg:flex-col lg:items-start lg:justify-start lg:pt-8 lg:gap-10">
             <img
-              className="aspect-square w-20 rounded-full border-[3px] border-white"
+              className="aspect-square w-20 rounded-full border-[3px] border-white lg:w-24"
               src="images/image-jeremy.png"
               alt="profile"
             />
             <div className="">
               <span>Report for</span>
-              <h1 className="font-light text-white text-2xl font-rubik">
+              <h1 className="font-light text-white text-2xl font-rubik lg:text-5xl lg:whitespace-pre-wrap lg:w-12">
                 Jeremy Robson
               </h1>
             </div>
           </div>
-          <div className="flex justify-center items-center gap-8 rounded-b-2xl relative bottom-2  bg-neutral-blue-dark ">
+          <div className="flex justify-center items-center gap-8 rounded-b-2xl relative bottom-2  bg-neutral-blue-dark lg:flex-col lg:items-start lg:pl-8 lg:gap-4">
             <div className="">
               <label
                 htmlFor="daily"
